@@ -1,0 +1,1036 @@
+[
+  {
+    "model_name": "mrm8488 BERT Spanish",
+    "backend": "hf_transformers",
+    "doc_id": "CV ITALIANO - R.E.",
+    "doc_length": 7125,
+    "entities_found": 242,
+    "entity_types": {
+      "CUSTOM": 116,
+      "LOC": 50,
+      "ORG": 72,
+      "PERSON": 4
+    },
+    "processing_time_ms": 1541.86,
+    "anonymized_length": 8228,
+    "sample_entities": [
+      {
+        "text": "Auto",
+        "label": "CUSTOM",
+        "score": 0.961
+      },
+      {
+        "text": "Deloc",
+        "label": "CUSTOM",
+        "score": 0.8
+      },
+      {
+        "text": "##zazio",
+        "label": "CUSTOM",
+        "score": 0.558
+      },
+      {
+        "text": "##du",
+        "label": "CUSTOM",
+        "score": 0.578
+      },
+      {
+        "text": "##ve",
+        "label": "CUSTOM",
+        "score": 0.567
+      },
+      {
+        "text": "Rio",
+        "label": "LOC",
+        "score": 0.967
+      },
+      {
+        "text": "##rganizzazioni",
+        "label": "LOC",
+        "score": 0.789
+      },
+      {
+        "text": "P L",
+        "label": "CUSTOM",
+        "score": 0.685
+      },
+      {
+        "text": "##ply Cha",
+        "label": "CUSTOM",
+        "score": 0.855
+      },
+      {
+        "text": "Acquis",
+        "label": "CUSTOM",
+        "score": 0.649
+      }
+    ]
+  },
+  {
+    "model_name": "mrm8488 BERT Spanish",
+    "backend": "hf_transformers",
+    "doc_id": "CV I.S. - FINANZAS",
+    "doc_length": 4978,
+    "entities_found": 155,
+    "entity_types": {
+      "CUSTOM": 129,
+      "ORG": 23,
+      "LOC": 3
+    },
+    "processing_time_ms": 83.26,
+    "anonymized_length": 5512,
+    "sample_entities": [
+      {
+        "text": "PRO",
+        "label": "CUSTOM",
+        "score": 0.87
+      },
+      {
+        "text": "AL",
+        "label": "CUSTOM",
+        "score": 0.501
+      },
+      {
+        "text": "##GECO SAU",
+        "label": "ORG",
+        "score": 0.765
+      },
+      {
+        "text": "YODEYMA",
+        "label": "CUSTOM",
+        "score": 0.526
+      },
+      {
+        "text": "##U",
+        "label": "ORG",
+        "score": 0.551
+      },
+      {
+        "text": "ALGECO SAU",
+        "label": "ORG",
+        "score": 0.832
+      },
+      {
+        "text": "SA",
+        "label": "CUSTOM",
+        "score": 0.691
+      },
+      {
+        "text": "##U",
+        "label": "ORG",
+        "score": 0.718
+      },
+      {
+        "text": "ICO",
+        "label": "CUSTOM",
+        "score": 0.977
+      },
+      {
+        "text": "Sistemas",
+        "label": "CUSTOM",
+        "score": 0.99
+      }
+    ]
+  },
+  {
+    "model_name": "mrm8488 BERT Spanish",
+    "backend": "hf_transformers",
+    "doc_id": "CV - J.L.  PERFIL ALEMAN",
+    "doc_length": 6687,
+    "entities_found": 294,
+    "entity_types": {
+      "CUSTOM": 199,
+      "ORG": 87,
+      "PERSON": 6,
+      "LOC": 2
+    },
+    "processing_time_ms": 123.51,
+    "anonymized_length": 7297,
+    "sample_entities": [
+      {
+        "text": "Erfa",
+        "label": "CUSTOM",
+        "score": 0.656
+      },
+      {
+        "text": "Management",
+        "label": "CUSTOM",
+        "score": 0.642
+      },
+      {
+        "text": "Un",
+        "label": "CUSTOM",
+        "score": 0.973
+      },
+      {
+        "text": "Mit",
+        "label": "CUSTOM",
+        "score": 0.966
+      },
+      {
+        "text": ". Experte",
+        "label": "CUSTOM",
+        "score": 0.966
+      },
+      {
+        "text": "Operation",
+        "label": "CUSTOM",
+        "score": 0.793
+      },
+      {
+        "text": "Service",
+        "label": "CUSTOM",
+        "score": 0.878
+      },
+      {
+        "text": "Prozes",
+        "label": "CUSTOM",
+        "score": 0.842
+      },
+      {
+        "text": "Organ",
+        "label": "ORG",
+        "score": 0.765
+      },
+      {
+        "text": "Einhe",
+        "label": "CUSTOM",
+        "score": 0.918
+      }
+    ]
+  },
+  {
+    "model_name": "BETO NER",
+    "backend": "hf_transformers",
+    "doc_id": "CV ITALIANO - R.E.",
+    "doc_length": 7125,
+    "entities_found": 405,
+    "entity_types": {
+      "CUSTOM": 277,
+      "ORG": 80,
+      "LOC": 44,
+      "PERSON": 4
+    },
+    "processing_time_ms": 1120.39,
+    "anonymized_length": 4097,
+    "sample_entities": [
+      {
+        "text": "PROFI",
+        "label": "CUSTOM",
+        "score": 0.7
+      },
+      {
+        "text": "* * con solida esperienza in * *",
+        "label": "CUSTOM",
+        "score": 0.866
+      },
+      {
+        "text": "Auto",
+        "label": "CUSTOM",
+        "score": 0.705
+      },
+      {
+        "text": ", elettrodomestica settore del bianco, * * * * elettromeccanica - plastica, alimentare, tessile e beni di consumo * *. In grado di condurre",
+        "label": "CUSTOM",
+        "score": 0.968
+      },
+      {
+        "text": "Operations",
+        "label": "CUSTOM",
+        "score": 0.637
+      },
+      {
+        "text": "multiplant complesse dando visione strategica, portando a termine progetti su larga scala di riorganizzazioni aziendali, riduzione costi, migliorie delle performance con l uso di metodologie lean, riorganizzazione dei canali di distribuzione e logistica, supporto al commerciale nella gestione key client. Esperienza internazionale in multinazionali, aziende padronali, progetti di private equity, determinato, team builder, motivatore. Capace nelle relazioni cross - funzionali con organizzazioni complesse. COMPET",
+        "label": "CUSTOM",
+        "score": 0.988
+      },
+      {
+        "text": "##ENZE",
+        "label": "ORG",
+        "score": 0.557
+      },
+      {
+        "text": "- Del",
+        "label": "CUSTOM",
+        "score": 0.65
+      },
+      {
+        "text": "##zazioni",
+        "label": "CUSTOM",
+        "score": 0.56
+      },
+      {
+        "text": "Produttive",
+        "label": "CUSTOM",
+        "score": 0.774
+      }
+    ]
+  },
+  {
+    "model_name": "BETO NER",
+    "backend": "hf_transformers",
+    "doc_id": "CV I.S. - FINANZAS",
+    "doc_length": 4978,
+    "entities_found": 288,
+    "entity_types": {
+      "CUSTOM": 241,
+      "ORG": 44,
+      "LOC": 3
+    },
+    "processing_time_ms": 88.28,
+    "anonymized_length": 3137,
+    "sample_entities": [
+      {
+        "text": "| o o o o o o o o o o o | FORTALEZAS PROFESIONALES flow, reporting. personas y tareas. EXPERIENCIA PROFESIONAL ( E",
+        "label": "CUSTOM",
+        "score": 0.937
+      },
+      {
+        "text": "). AISLAMIENTOS SUAVAL reestructuración financiera.",
+        "label": "CUSTOM",
+        "score": 0.961
+      },
+      {
+        "text": "ALGECO",
+        "label": "ORG",
+        "score": 0.889
+      },
+      {
+        "text": "fusion.",
+        "label": "CUSTOM",
+        "score": 0.928
+      },
+      {
+        "text": "YODEYMA",
+        "label": "ORG",
+        "score": 0.734
+      },
+      {
+        "text": "##GECO",
+        "label": "ORG",
+        "score": 0.695
+      },
+      {
+        "text": "SAU",
+        "label": "ORG",
+        "score": 0.516
+      },
+      {
+        "text": "PERI SAU | Tesorería : Sindicados, novaciones, líneas de circulante, préstamos, líneas",
+        "label": "CUSTOM",
+        "score": 0.839
+      },
+      {
+        "text": "ICO",
+        "label": "CUSTOM",
+        "score": 0.847
+      },
+      {
+        "text": ", cash pooling, cash Gestión : Reducción de la obra en curso, trato con fondos de inversión ( venta de litigios, de empresas ), due dilligence, concursos de acreedores, contabilidad, control presupuestario. o Sistemas : Implantación de",
+        "label": "CUSTOM",
+        "score": 0.991
+      }
+    ]
+  },
+  {
+    "model_name": "BETO NER",
+    "backend": "hf_transformers",
+    "doc_id": "CV - J.L.  PERFIL ALEMAN",
+    "doc_length": 6687,
+    "entities_found": 441,
+    "entity_types": {
+      "CUSTOM": 326,
+      "ORG": 104,
+      "PERSON": 3,
+      "LOC": 8
+    },
+    "processing_time_ms": 148.45,
+    "anonymized_length": 6031,
+    "sample_entities": [
+      {
+        "text": "P R O F I L Mehr als 25 Jahre Erfahrung im",
+        "label": "CUSTOM",
+        "score": 0.924
+      },
+      {
+        "text": "Management",
+        "label": "CUSTOM",
+        "score": 0.611
+      },
+      {
+        "text": "und der von",
+        "label": "CUSTOM",
+        "score": 0.995
+      },
+      {
+        "text": "##men und, vom Mittelstand bis zum Konzern. Experte",
+        "label": "CUSTOM",
+        "score": 0.869
+      },
+      {
+        "text": ",",
+        "label": "CUSTOM",
+        "score": 0.996
+      },
+      {
+        "text": "Operation",
+        "label": "CUSTOM",
+        "score": 0.738
+      },
+      {
+        "text": ",",
+        "label": "CUSTOM",
+        "score": 0.994
+      },
+      {
+        "text": "Service",
+        "label": "CUSTOM",
+        "score": 0.767
+      },
+      {
+        "text": ",",
+        "label": "CUSTOM",
+        "score": 0.996
+      },
+      {
+        "text": "Prozesse",
+        "label": "CUSTOM",
+        "score": 0.696
+      }
+    ]
+  },
+  {
+    "model_name": "BERTin NER",
+    "backend": "hf_transformers",
+    "doc_id": "CV ITALIANO - R.E.",
+    "doc_length": 7125,
+    "entities_found": 369,
+    "entity_types": {
+      "CUSTOM": 296,
+      "LOC": 21,
+      "ORG": 52
+    },
+    "processing_time_ms": 1161.13,
+    "anonymized_length": 4276,
+    "sample_entities": [
+      {
+        "text": " ##",
+        "label": "CUSTOM",
+        "score": 0.974
+      },
+      {
+        "text": " PROFILO",
+        "label": "CUSTOM",
+        "score": 0.759
+      },
+      {
+        "text": "\n\n",
+        "label": "CUSTOM",
+        "score": 0.895
+      },
+      {
+        "text": "***Operations",
+        "label": "CUSTOM",
+        "score": 0.709
+      },
+      {
+        "text": " Director",
+        "label": "CUSTOM",
+        "score": 0.845
+      },
+      {
+        "text": "*** con solida esperienza in realtà **",
+        "label": "CUSTOM",
+        "score": 0.973
+      },
+      {
+        "text": "Auto",
+        "label": "CUSTOM",
+        "score": 0.636
+      },
+      {
+        "text": "motive, elettrodomestica settore del bianco,** **elettromeccanica-plastica, alimentare, tessile e beni di consumo**.\n\nIn grado di condurre",
+        "label": "CUSTOM",
+        "score": 0.967
+      },
+      {
+        "text": " Operations",
+        "label": "CUSTOM",
+        "score": 0.72
+      },
+      {
+        "text": " multiplant complesse dando visione strategica, portando a termine progetti su larga scala di riorganizzazioni aziendali, riduzione costi, migliorie delle performance con l’uso di metodologie lean, riorganizzazione dei canali di distribuzione e logistica, supporto al commerciale nella gestione key client.\n\nEsperienza internazionale in multinazionali, aziende padronali, progetti di private equity, determinato, team builder, motivatore. Capace nelle relazioni cross-funzionali con organizzazioni complesse.\n\n##",
+        "label": "CUSTOM",
+        "score": 0.982
+      }
+    ]
+  },
+  {
+    "model_name": "BERTin NER",
+    "backend": "hf_transformers",
+    "doc_id": "CV I.S. - FINANZAS",
+    "doc_length": 4978,
+    "entities_found": 253,
+    "entity_types": {
+      "CUSTOM": 202,
+      "ORG": 48,
+      "LOC": 3
+    },
+    "processing_time_ms": 73.94,
+    "anonymized_length": 2966,
+    "sample_entities": [
+      {
+        "text": " |o o o o o o o o o o o|FORTALEZAS PROFESIONALES flow, reporting. personas y tareas. EXPERIENCIA PROFESIONAL (Ekon). AISLAMIENTOS SUAV",
+        "label": "CUSTOM",
+        "score": 0.877
+      },
+      {
+        "text": " reestructuración financiera.",
+        "label": "CUSTOM",
+        "score": 0.989
+      },
+      {
+        "text": " ALGECO",
+        "label": "ORG",
+        "score": 0.893
+      },
+      {
+        "text": " SAU",
+        "label": "ORG",
+        "score": 0.625
+      },
+      {
+        "text": " fusion.",
+        "label": "CUSTOM",
+        "score": 0.748
+      },
+      {
+        "text": " YODEYMA",
+        "label": "ORG",
+        "score": 0.821
+      },
+      {
+        "text": " SLU",
+        "label": "ORG",
+        "score": 0.55
+      },
+      {
+        "text": " ALGECO",
+        "label": "ORG",
+        "score": 0.938
+      },
+      {
+        "text": " SA",
+        "label": "ORG",
+        "score": 0.703
+      },
+      {
+        "text": "U",
+        "label": "ORG",
+        "score": 0.806
+      }
+    ]
+  },
+  {
+    "model_name": "BERTin NER",
+    "backend": "hf_transformers",
+    "doc_id": "CV - J.L.  PERFIL ALEMAN",
+    "doc_length": 6687,
+    "entities_found": 530,
+    "entity_types": {
+      "CUSTOM": 475,
+      "ORG": 45,
+      "LOC": 9,
+      "PERSON": 1
+    },
+    "processing_time_ms": 166.69,
+    "anonymized_length": 8299,
+    "sample_entities": [
+      {
+        "text": "\n\nMehr als 25 Jahre",
+        "label": "CUSTOM",
+        "score": 0.761
+      },
+      {
+        "text": " Erfahrung",
+        "label": "CUSTOM",
+        "score": 0.629
+      },
+      {
+        "text": " im",
+        "label": "CUSTOM",
+        "score": 0.523
+      },
+      {
+        "text": " Management",
+        "label": "CUSTOM",
+        "score": 0.551
+      },
+      {
+        "text": " und der",
+        "label": "CUSTOM",
+        "score": 0.925
+      },
+      {
+        "text": " Führung",
+        "label": "CUSTOM",
+        "score": 0.606
+      },
+      {
+        "text": " Unterneh",
+        "label": "CUSTOM",
+        "score": 0.584
+      },
+      {
+        "text": " und\n\n",
+        "label": "CUSTOM",
+        "score": 0.921
+      },
+      {
+        "text": "Geschäfts",
+        "label": "CUSTOM",
+        "score": 0.622
+      },
+      {
+        "text": "bereichen, vom",
+        "label": "CUSTOM",
+        "score": 0.737
+      }
+    ]
+  },
+  {
+    "model_name": "BERT English (baseline)",
+    "backend": "hf_transformers",
+    "doc_id": "CV ITALIANO - R.E.",
+    "doc_length": 7125,
+    "entities_found": 104,
+    "entity_types": {
+      "ORG": 80,
+      "LOC": 15,
+      "PERSON": 4,
+      "CUSTOM": 5
+    },
+    "processing_time_ms": 899.45,
+    "anonymized_length": 7248,
+    "sample_entities": [
+      {
+        "text": "Deloc",
+        "label": "ORG",
+        "score": 0.924
+      },
+      {
+        "text": "P & L",
+        "label": "ORG",
+        "score": 0.892
+      },
+      {
+        "text": "Lea",
+        "label": "ORG",
+        "score": 0.742
+      },
+      {
+        "text": "Operations and Manufacturing",
+        "label": "ORG",
+        "score": 0.807
+      },
+      {
+        "text": "dell",
+        "label": "ORG",
+        "score": 0.764
+      },
+      {
+        "text": "USA",
+        "label": "LOC",
+        "score": 0.726
+      },
+      {
+        "text": "Palo Alto",
+        "label": "LOC",
+        "score": 0.921
+      },
+      {
+        "text": "USA",
+        "label": "LOC",
+        "score": 1.0
+      },
+      {
+        "text": "Feb",
+        "label": "ORG",
+        "score": 0.866
+      },
+      {
+        "text": "CooperVision",
+        "label": "ORG",
+        "score": 0.783
+      }
+    ]
+  },
+  {
+    "model_name": "BERT English (baseline)",
+    "backend": "hf_transformers",
+    "doc_id": "CV I.S. - FINANZAS",
+    "doc_length": 4978,
+    "entities_found": 110,
+    "entity_types": {
+      "ORG": 103,
+      "LOC": 4,
+      "PERSON": 3
+    },
+    "processing_time_ms": 111.52,
+    "anonymized_length": 5253,
+    "sample_entities": [
+      {
+        "text": "##Z",
+        "label": "ORG",
+        "score": 0.833
+      },
+      {
+        "text": "E",
+        "label": "ORG",
+        "score": 0.767
+      },
+      {
+        "text": "##P",
+        "label": "ORG",
+        "score": 0.957
+      },
+      {
+        "text": "##IENCIA",
+        "label": "ORG",
+        "score": 0.794
+      },
+      {
+        "text": "AISLAM",
+        "label": "ORG",
+        "score": 0.851
+      },
+      {
+        "text": "##NTOS",
+        "label": "ORG",
+        "score": 0.799
+      },
+      {
+        "text": "ALGECO SA",
+        "label": "ORG",
+        "score": 0.985
+      },
+      {
+        "text": "Y",
+        "label": "ORG",
+        "score": 0.943
+      },
+      {
+        "text": "##ODEYMA SL",
+        "label": "ORG",
+        "score": 0.822
+      },
+      {
+        "text": "ICO",
+        "label": "ORG",
+        "score": 0.737
+      }
+    ]
+  },
+  {
+    "model_name": "BERT English (baseline)",
+    "backend": "hf_transformers",
+    "doc_id": "CV - J.L.  PERFIL ALEMAN",
+    "doc_length": 6687,
+    "entities_found": 133,
+    "entity_types": {
+      "ORG": 129,
+      "LOC": 4
+    },
+    "processing_time_ms": 141.34,
+    "anonymized_length": 7000,
+    "sample_entities": [
+      {
+        "text": "##ternehmen",
+        "label": "ORG",
+        "score": 0.852
+      },
+      {
+        "text": "Mittelstand",
+        "label": "ORG",
+        "score": 0.8
+      },
+      {
+        "text": "Organisationen",
+        "label": "ORG",
+        "score": 0.774
+      },
+      {
+        "text": "Einheite",
+        "label": "ORG",
+        "score": 0.769
+      },
+      {
+        "text": "Branch",
+        "label": "ORG",
+        "score": 0.76
+      },
+      {
+        "text": "##te Elektrotechnik",
+        "label": "ORG",
+        "score": 0.938
+      },
+      {
+        "text": "TGA",
+        "label": "ORG",
+        "score": 0.983
+      },
+      {
+        "text": "Handwerk",
+        "label": "ORG",
+        "score": 0.989
+      },
+      {
+        "text": "Photovoltaik",
+        "label": "ORG",
+        "score": 0.966
+      },
+      {
+        "text": "Montage",
+        "label": "ORG",
+        "score": 0.929
+      }
+    ]
+  },
+  {
+    "model_name": "SpaCy Transformer",
+    "backend": "spacy",
+    "doc_id": "CV ITALIANO - R.E.",
+    "doc_length": 7125,
+    "entities_found": 105,
+    "entity_types": {
+      "ORG": 35,
+      "LOC": 14,
+      "DATE": 25,
+      "CUSTOM": 30,
+      "PERSON": 1
+    },
+    "processing_time_ms": 1432.68,
+    "anonymized_length": 6889,
+    "sample_entities": [
+      {
+        "text": "Operations",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Gestione delle",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Acquisti/Negoziazione Risorse Umane",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Palo Alto",
+        "label": "LOC",
+        "score": 1.0
+      },
+      {
+        "text": "USA",
+        "label": "LOC",
+        "score": 1.0
+      },
+      {
+        "text": "Febbraio 2022",
+        "label": "DATE",
+        "score": 1.0
+      },
+      {
+        "text": "CooperVision",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Logistica & Supply Chain Centralizzata",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Dicembre 2018",
+        "label": "DATE",
+        "score": 1.0
+      },
+      {
+        "text": "Febbraio 2022",
+        "label": "DATE",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "model_name": "SpaCy Transformer",
+    "backend": "spacy",
+    "doc_id": "CV I.S. - FINANZAS",
+    "doc_length": 4978,
+    "entities_found": 70,
+    "entity_types": {
+      "ORG": 38,
+      "PERSON": 6,
+      "DATE": 15,
+      "LOC": 2,
+      "CUSTOM": 9
+    },
+    "processing_time_ms": 265.22,
+    "anonymized_length": 4577,
+    "sample_entities": [
+      {
+        "text": "EXPERIENCIA PROFESIONAL",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Ekon",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "ALGECO SAU",
+        "label": "PERSON",
+        "score": 1.0
+      },
+      {
+        "text": "YODEYMA SLU ALGECO SAU PERI SAU|Tesorería",
+        "label": "PERSON",
+        "score": 1.0
+      },
+      {
+        "text": "ERP",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Mar 24 – Jul 24",
+        "label": "DATE",
+        "score": 1.0
+      },
+      {
+        "text": "ERP SANTANDER DIGITAL ASSETS",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Ene 2020 – Dic 2020",
+        "label": "DATE",
+        "score": 1.0
+      },
+      {
+        "text": "Dic 2018 – May 2019",
+        "label": "DATE",
+        "score": 1.0
+      },
+      {
+        "text": "Axapta",
+        "label": "ORG",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "model_name": "SpaCy Transformer",
+    "backend": "spacy",
+    "doc_id": "CV - J.L.  PERFIL ALEMAN",
+    "doc_length": 6687,
+    "entities_found": 51,
+    "entity_types": {
+      "DATE": 8,
+      "ORG": 32,
+      "CUSTOM": 7,
+      "LOC": 3,
+      "PERSON": 1
+    },
+    "processing_time_ms": 333.33,
+    "anonymized_length": 6547,
+    "sample_entities": [
+      {
+        "text": "25 Jahre",
+        "label": "DATE",
+        "score": 1.0
+      },
+      {
+        "text": "TGA",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Handwerk",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Photovoltaik",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "im Innen- und Außendienst",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Automotive",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Produktion",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Industrie",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "Automation",
+        "label": "ORG",
+        "score": 1.0
+      },
+      {
+        "text": "11/2023",
+        "label": "DATE",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "model_name": "Ollama Qwen3 8B",
+    "backend": "ollama",
+    "doc_id": "CV ITALIANO - R.E.",
+    "doc_length": 7125,
+    "entities_found": 0,
+    "entity_types": {},
+    "processing_time_ms": 23.93,
+    "anonymized_length": 6889,
+    "sample_entities": []
+  },
+  {
+    "model_name": "Ollama Qwen3 8B",
+    "backend": "ollama",
+    "doc_id": "CV I.S. - FINANZAS",
+    "doc_length": 4978,
+    "entities_found": 0,
+    "entity_types": {},
+    "processing_time_ms": 6.59,
+    "anonymized_length": 4577,
+    "sample_entities": []
+  },
+  {
+    "model_name": "Ollama Qwen3 8B",
+    "backend": "ollama",
+    "doc_id": "CV - J.L.  PERFIL ALEMAN",
+    "doc_length": 6687,
+    "entities_found": 0,
+    "entity_types": {},
+    "processing_time_ms": 8.94,
+    "anonymized_length": 6547,
+    "sample_entities": []
+  }
+]

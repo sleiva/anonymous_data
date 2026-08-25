@@ -1,0 +1,213 @@
+[
+  {
+    "id":"doc-0",
+    "original":"John Smith lives at 123 Main Street, New York. His email is john.smith@email.com and phone is +1-555-123-4567.",
+    "anonymized":"********** lives at 123 ***********, ********. His email is john.smith@email.com and phone is +1-555-123-4567.",
+    "entities":[
+      {
+        "text":"John Smith",
+        "type":"PERSON",
+        "start":0,
+        "end":10,
+        "score":0.9995775223
+      },
+      {
+        "text":"Main Street",
+        "type":"LOC",
+        "start":24,
+        "end":35,
+        "score":0.9918774366
+      },
+      {
+        "text":"New York",
+        "type":"LOC",
+        "start":37,
+        "end":45,
+        "score":0.9988130331
+      }
+    ]
+  },
+  {
+    "id":"doc-1",
+    "original":"Mar\u00eda Garc\u00eda works at Google in Madrid. Contact: maria.garcia@google.com, DNI: 12345678Z.",
+    "anonymized":"************ works at ****** in ******. Contact: maria.garcia@google.com, DNI: 12345678Z.",
+    "entities":[
+      {
+        "text":"Mar\u00eda Garc\u00eda",
+        "type":"PERSON",
+        "start":0,
+        "end":12,
+        "score":0.9992711544
+      },
+      {
+        "text":"Google",
+        "type":"ORG",
+        "start":22,
+        "end":28,
+        "score":0.9978955984
+      },
+      {
+        "text":"Madrid",
+        "type":"LOC",
+        "start":32,
+        "end":38,
+        "score":0.9993707538
+      }
+    ]
+  },
+  {
+    "id":"doc-2",
+    "original":"The patient Mr. Robert Johnson (DOB: 1980-05-15) was admitted to Mayo Clinic on 2024-01-20.",
+    "anonymized":"The patient Mr. ************** (DOB: 1980-05-15) was admitted to *********** on 2024-01-20.",
+    "entities":[
+      {
+        "text":"Robert Johnson",
+        "type":"PERSON",
+        "start":16,
+        "end":30,
+        "score":0.9995955825
+      },
+      {
+        "text":"Mayo Clinic",
+        "type":"LOC",
+        "start":65,
+        "end":76,
+        "score":0.8128416538
+      }
+    ]
+  },
+  {
+    "id":"doc-3",
+    "original":"Invoice #INV-2024-001 for Apple Inc. Amount: $15,000. IBAN: ES9121000418450200051332.",
+    "anonymized":"Invoice #INV-2024-001 for *********. Amount: $15,000. IBAN: ES9121000418450200051332.",
+    "entities":[
+      {
+        "text":"Apple Inc",
+        "type":"ORG",
+        "start":26,
+        "end":35,
+        "score":0.9994646311
+      }
+    ]
+  },
+  {
+    "id":"doc-4",
+    "original":"Dr. Sarah Johnson from Microsoft Research in Seattle will present on 2024-06-15. Email: sarah.j@microsoft.com",
+    "anonymized":"Dr. ************* from ****************** in ******* will present on 2024-06-15. Email: sarah.j@microsoft.com",
+    "entities":[
+      {
+        "text":"Sarah Johnson",
+        "type":"PERSON",
+        "start":4,
+        "end":17,
+        "score":0.9996494651
+      },
+      {
+        "text":"Microsoft Research",
+        "type":"ORG",
+        "start":23,
+        "end":41,
+        "score":0.9993818998
+      },
+      {
+        "text":"Seattle",
+        "type":"LOC",
+        "start":45,
+        "end":52,
+        "score":0.9988914132
+      }
+    ]
+  },
+  {
+    "id":"doc-5",
+    "original":"Mar\u00eda Garc\u00eda vive en Madrid. Email: maria@empresa.es, Tel: +34 91 123 45 67.",
+    "anonymized":"************ vive en ******. Email: maria@empresa.es, Tel: +34 91 123 45 67.",
+    "entities":[
+      {
+        "text":"Mar\u00eda Garc\u00eda",
+        "type":"PERSON",
+        "start":0,
+        "end":12,
+        "score":0.9987177253
+      },
+      {
+        "text":"Madrid",
+        "type":"LOC",
+        "start":21,
+        "end":27,
+        "score":0.9989616871
+      }
+    ]
+  },
+  {
+    "id":"doc-6",
+    "original":"Invoice INV-001 for Apple Inc. $50,000. IBAN: GB29NWBK60161331926819.",
+    "anonymized":"Invoice INV-001 for *********. $50,000. IBAN: GB29NWBK60161331926819.",
+    "entities":[
+      {
+        "text":"Apple Inc",
+        "type":"ORG",
+        "start":20,
+        "end":29,
+        "score":0.9994536042
+      }
+    ]
+  },
+  {
+    "id":"doc-7",
+    "original":"Contact support at support@example.com or call +44 20 7946 0958.",
+    "anonymized":"Contact support at support@example.com or call +44 20 7946 0958.",
+    "entities":[
+
+    ]
+  },
+  {
+    "id":"doc-8",
+    "original":"The meeting is scheduled for December 25, 2024 at 10:00 AM in London.",
+    "anonymized":"The meeting is scheduled for December 25, 2024 at 10:00 AM in ******.",
+    "entities":[
+      {
+        "text":"London",
+        "type":"LOC",
+        "start":62,
+        "end":68,
+        "score":0.9995359182
+      }
+    ]
+  },
+  {
+    "id":"doc-9",
+    "original":"Patient record: Jane Doe, SSN: 123-45-6789, DOB: 1990-03-22, Address: 456 Oak Ave, Boston.",
+    "anonymized":"Patient record: ********, **N: 123-45-6789, DOB: 1990-03-22, Address: 456 *******, ******.",
+    "entities":[
+      {
+        "text":"Jane Doe",
+        "type":"PERSON",
+        "start":16,
+        "end":24,
+        "score":0.997210741
+      },
+      {
+        "text":"SS",
+        "type":"LOC",
+        "start":26,
+        "end":28,
+        "score":0.7566623092
+      },
+      {
+        "text":"Oak Ave",
+        "type":"LOC",
+        "start":74,
+        "end":81,
+        "score":0.9907689095
+      },
+      {
+        "text":"Boston",
+        "type":"LOC",
+        "start":83,
+        "end":89,
+        "score":0.9794071913
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+id,text,category,source
+1,"John Smith lives at 123 Main Street, New York. His email is john.smith@email.com and phone is +1-555-123-4567.","personal","test"
+2,"María García works at Google in Madrid. Contact: maria.garcia@google.com, DNI: 12345678Z.","personal","test"
+3,"The patient Mr. Robert Johnson (DOB: 1980-05-15) was admitted to Mayo Clinic on 2024-01-20.","medical","test"
+4,"Invoice #INV-2024-001 for Apple Inc. Amount: $15,000. IBAN: ES9121000418450200051332.","financial","test"
+5,"Dr. Sarah Johnson from Microsoft Research in Seattle will present on 2024-06-15. Email: sarah.j@microsoft.com","academic","test"
+6,"María García vive en Madrid. Email: maria@empresa.es, Tel: +34 91 123 45 67.","personal","test"
+7,"Invoice INV-001 for Apple Inc. $50,000. IBAN: GB29NWBK60161331926819.","financial","test"
+8,"Contact support at support@example.com or call +44 20 7946 0958.","support","test"
+9,"The meeting is scheduled for December 25, 2024 at 10:00 AM in London.","business","test"
+10,"Patient record: Jane Doe, SSN: 123-45-6789, DOB: 1990-03-22, Address: 456 Oak Ave, Boston.","medical","test"

@@ -1,16 +1,16 @@
 # NER Model Benchmark Report
-**Generated:** 2026-08-25 13:45:08
+**Generated:** 2026-08-25 16:12:09
 
 ## Summary by Model
 
 | Model | Backend | Avg Entities | Avg Time (ms) | Total Entities |
 |-------|---------|--------------|---------------|----------------|
-| mrm8488 BERT Spanish (hf_transformers) | hf_transformers | 230.3 | 682 | 691 |
-| BETO NER (hf_transformers) | hf_transformers | 378.0 | 423 | 1134 |
-| BERTin NER (hf_transformers) | hf_transformers | 384.0 | 582 | 1152 |
-| BERT English (baseline) (hf_transformers) | hf_transformers | 115.7 | 447 | 347 |
-| SpaCy Transformer (spacy) | spacy | 75.3 | 741 | 226 |
-| Ollama Qwen3 27B (ollama) | ollama | 0.3 | 69921 | 1 |
+| mrm8488 BERT Spanish (hf_transformers) | hf_transformers | 230.3 | 584 | 691 |
+| BETO NER (hf_transformers) | hf_transformers | 378.0 | 432 | 1134 |
+| BERTin NER (hf_transformers) | hf_transformers | 384.0 | 479 | 1152 |
+| BERT English (baseline) (hf_transformers) | hf_transformers | 115.7 | 384 | 347 |
+| SpaCy Transformer (spacy) | spacy | 75.3 | 644 | 226 |
+| Ollama Qwen3 27B (ollama) | ollama | 0.0 | 92810 | 0 |
 
 ## Detailed Results by Document
 
@@ -18,7 +18,7 @@
 - **Backend:** hf_transformers
 - **Doc Length:** 7125 chars
 - **Entities Found:** 242
-- **Processing Time:** 1841ms
+- **Processing Time:** 1537ms
 - **Entity Types:** {'CUSTOM': 116, 'LOC': 50, 'ORG': 72, 'PERSON': 4}
 - **Sample Entities:**
   - `Auto` (CUSTOM: 0.961)
@@ -31,7 +31,7 @@
 - **Backend:** hf_transformers
 - **Doc Length:** 4978 chars
 - **Entities Found:** 155
-- **Processing Time:** 80ms
+- **Processing Time:** 88ms
 - **Entity Types:** {'CUSTOM': 129, 'ORG': 23, 'LOC': 3}
 - **Sample Entities:**
   - `PRO` (CUSTOM: 0.87)
@@ -44,7 +44,7 @@
 - **Backend:** hf_transformers
 - **Doc Length:** 6687 chars
 - **Entities Found:** 294
-- **Processing Time:** 125ms
+- **Processing Time:** 127ms
 - **Entity Types:** {'CUSTOM': 199, 'ORG': 87, 'PERSON': 6, 'LOC': 2}
 - **Sample Entities:**
   - `Erfa` (CUSTOM: 0.656)
@@ -57,7 +57,7 @@
 - **Backend:** hf_transformers
 - **Doc Length:** 7125 chars
 - **Entities Found:** 405
-- **Processing Time:** 1033ms
+- **Processing Time:** 1061ms
 - **Entity Types:** {'CUSTOM': 277, 'ORG': 80, 'LOC': 44, 'PERSON': 4}
 - **Sample Entities:**
   - `PROFI` (CUSTOM: 0.7)
@@ -83,7 +83,7 @@
 - **Backend:** hf_transformers
 - **Doc Length:** 6687 chars
 - **Entities Found:** 441
-- **Processing Time:** 148ms
+- **Processing Time:** 147ms
 - **Entity Types:** {'CUSTOM': 326, 'ORG': 104, 'PERSON': 3, 'LOC': 8}
 - **Sample Entities:**
   - `P R O F I L Mehr als 25 Jahre Erfahrung im` (CUSTOM: 0.924)
@@ -96,7 +96,7 @@
 - **Backend:** hf_transformers
 - **Doc Length:** 7125 chars
 - **Entities Found:** 369
-- **Processing Time:** 1503ms
+- **Processing Time:** 1194ms
 - **Entity Types:** {'CUSTOM': 296, 'LOC': 21, 'ORG': 52}
 - **Sample Entities:**
   - ` ##` (CUSTOM: 0.974)
@@ -124,7 +124,7 @@
 - **Backend:** hf_transformers
 - **Doc Length:** 6687 chars
 - **Entities Found:** 530
-- **Processing Time:** 167ms
+- **Processing Time:** 169ms
 - **Entity Types:** {'CUSTOM': 475, 'ORG': 45, 'LOC': 9, 'PERSON': 1}
 - **Sample Entities:**
   - `
@@ -139,7 +139,7 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** hf_transformers
 - **Doc Length:** 7125 chars
 - **Entities Found:** 104
-- **Processing Time:** 1091ms
+- **Processing Time:** 894ms
 - **Entity Types:** {'ORG': 80, 'LOC': 15, 'PERSON': 4, 'CUSTOM': 5}
 - **Sample Entities:**
   - `Deloc` (ORG: 0.924)
@@ -152,7 +152,7 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** hf_transformers
 - **Doc Length:** 4978 chars
 - **Entities Found:** 110
-- **Processing Time:** 110ms
+- **Processing Time:** 113ms
 - **Entity Types:** {'ORG': 103, 'LOC': 4, 'PERSON': 3}
 - **Sample Entities:**
   - `##Z` (ORG: 0.833)
@@ -165,7 +165,7 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** hf_transformers
 - **Doc Length:** 6687 chars
 - **Entities Found:** 133
-- **Processing Time:** 139ms
+- **Processing Time:** 146ms
 - **Entity Types:** {'ORG': 129, 'LOC': 4}
 - **Sample Entities:**
   - `##ternehmen` (ORG: 0.852)
@@ -178,7 +178,7 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** spacy
 - **Doc Length:** 7125 chars
 - **Entities Found:** 105
-- **Processing Time:** 1633ms
+- **Processing Time:** 1348ms
 - **Entity Types:** {'ORG': 35, 'LOC': 14, 'DATE': 25, 'CUSTOM': 30, 'PERSON': 1}
 - **Sample Entities:**
   - `Operations` (ORG: 1.0)
@@ -191,7 +191,7 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** spacy
 - **Doc Length:** 4978 chars
 - **Entities Found:** 70
-- **Processing Time:** 254ms
+- **Processing Time:** 255ms
 - **Entity Types:** {'ORG': 38, 'PERSON': 6, 'DATE': 15, 'LOC': 2, 'CUSTOM': 9}
 - **Sample Entities:**
   - `EXPERIENCIA PROFESIONAL` (ORG: 1.0)
@@ -204,7 +204,7 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** spacy
 - **Doc Length:** 6687 chars
 - **Entities Found:** 51
-- **Processing Time:** 337ms
+- **Processing Time:** 329ms
 - **Entity Types:** {'DATE': 8, 'ORG': 32, 'CUSTOM': 7, 'LOC': 3, 'PERSON': 1}
 - **Sample Entities:**
   - `25 Jahre` (DATE: 1.0)
@@ -217,7 +217,7 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** ollama
 - **Doc Length:** 7125 chars
 - **Entities Found:** 0
-- **Processing Time:** 74229ms
+- **Processing Time:** 94145ms
 - **Entity Types:** {}
 - **Sample Entities:**
 
@@ -225,15 +225,14 @@ Mehr als 25 Jahre` (CUSTOM: 0.761)
 - **Backend:** ollama
 - **Doc Length:** 4978 chars
 - **Entities Found:** 0
-- **Processing Time:** 76813ms
+- **Processing Time:** 150973ms
 - **Entity Types:** {}
 - **Sample Entities:**
 
 ### CV - J.L.  PERFIL ALEMAN (Ollama Qwen3 27B)
 - **Backend:** ollama
 - **Doc Length:** 6687 chars
-- **Entities Found:** 1
-- **Processing Time:** 58722ms
-- **Entity Types:** {'DATE': 1}
+- **Entities Found:** 0
+- **Processing Time:** 33313ms
+- **Entity Types:** {}
 - **Sample Entities:**
-  - `11/2023 – heute` (DATE: 0.95)

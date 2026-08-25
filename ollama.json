@@ -1,0 +1,120 @@
+{
+  "models": {
+    "ornith:latest": {
+      "description": "Best small model for NER (5.6 GB). Excellent entity detection with correct types. Requires temperature=0.6 for best results. Limited to short texts (<1000 chars) due to speed.",
+      "size_gb": 5.6,
+      "parameters": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "top_k": 20,
+        "num_predict": 2048
+      },
+      "best_for": ["multilingual NER", "Spanish/English/Italian/German", "PII detection"],
+      "performance": {
+        "entities_detected": "Good (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
+        "speed": "Medium (~10-30s per 5000 chars)",
+        "format": "Correct JSON array with text, label, start, end, score"
+      },
+      "notes": "Requires temperature=0.6. At 0.1 returns empty. Excellent entity typing (PERSON, ORG, GPE, EMAIL, PHONE, ID)."
+    },
+    "lfm2.5:8b": {
+      "description": "Liquid Foundation Model 8B (5.2 GB). Returns structured summary format instead of NER array.",
+      "size_gb": 5.2,
+      "parameters": {
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "repeat_penalty": 1.0,
+        "min_p": 0.0,
+        "num_predict": 4096
+      },
+      "best_for": ["Document summarization", "Structured extraction"],
+      "performance": {
+        "format": "Structured objects (name, title, experiences, etc.) - NOT NER array",
+        "entities_detected": "Returns structured biography/experience objects"
+      },
+      "notes": "Returns structured biography format, not NER array. Good for document understanding, not PII extraction."
+    },
+    "qwen3.8:27b-mlx": {
+      "description": "Large 27B model (18 GB). Base model without NER fine-tuning - fails on long texts.",
+      "size_gb": 18,
+      "parameters": {
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "repeat_penalty": 1.0,
+        "min_p": 0.0,
+        "num_predict": 4096
+      },
+      "best_for": ["Short prompt testing only"],
+      "performance": {
+        "entities_detected": "0 on long CVs (4978+ chars), 1 on short German text",
+        "speed": "Very slow (93s/doc on MPS)",
+        "format": "Correct when it works"
+      },
+      "notes": "Base model without NER fine-tuning. Fails on long texts due to truncation and lack of NER training. Not recommended for production NER."
+    },
+    "bge-m3:latest": {
+      "description": "Embedding model (1.2 GB). Not for NER.",
+      "size_gb": 1.2,
+      "purpose": "Embeddings only"
+    },
+    "nomic-embed-text:latest": {
+      "description": "Embedding model (274 MB). Not for NER.",
+      "size_gb": 0.27,
+      "purpose": "Embeddings only"
+    }
+  },
+  "recommended_ner_params": {
+    "ornith:latest": {
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "num_predict": 4096
+    },
+    "llama3.1:8b": {
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "num_predict": 4096
+    },
+    "phi3:mini": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 40,
+      "num_predict": 2048
+    }
+  },
+  "global_settings": {
+    "base_url": "http://localhost:11434",
+    "system_prompt": "You are an expert NER system. Extract PII entities from text. Return ONLY a JSON array with objects: text, label, start, end, score. Labels: PERSON, ORG, LOC, GPE, DATE, EMAIL, PHONE, ADDRESS, ID_NUMBER, CREDIT_CARD, IBAN, IP_ADDRESS, URL, CUSTOM. Rules: Return ONLY valid JSON array. No markdown, no explanations. Example: [{{\\\"text\\\": \\\"Juan Pérez\\\", \\\"label\\\": \\\"PERSON\\\", \\\"start\\\": 0, \\\"end\\\": 10, \\\"score\\\": 0.99}}]",
+    "human_template": "Text: {text}\n\nReturn ONLY the JSON array:",
+    "max_chars_per_request": 8000,
+    "example_format": [
+      {"text": "Juan Pérez", "label": "PERSON", "start": 0, "end": 10, "score": 0.99}
+    ]
+  },
+  "label_mapping": {
+    "PERSON": "PERSON",
+    "ORG": "ORG",
+    "ORGANIZATION": "ORG",
+    "LOC": "LOC",
+    "LOCATION": "LOC",
+    "GPE": "LOC",
+    "DATE": "DATE",
+    "EMAIL": "EMAIL",
+    "PHONE": "PHONE",
+    "PHONE_NUMBER": "PHONE",
+    "ADDRESS": "ADDRESS",
+    "ID": "ID_NUMBER",
+    "ID_NUMBER": "ID_NUMBER",
+    "DNI": "ID_NUMBER",
+    "SSN": "ID_NUMBER",
+    "CREDIT_CARD": "CREDIT_CARD",
+    "IBAN": "IBAN",
+    "IP": "IP_ADDRESS",
+    "IP_ADDRESS": "IP_ADDRESS",
+    "URL": "URL",
+    "CUSTOM": "CUSTOM"
+  }
+}

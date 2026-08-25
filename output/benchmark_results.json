@@ -11,7 +11,7 @@
       "ORG": 72,
       "PERSON": 4
     },
-    "processing_time_ms": 1541.86,
+    "processing_time_ms": 1840.94,
     "anonymized_length": 8228,
     "sample_entities": [
       {
@@ -77,7 +77,7 @@
       "ORG": 23,
       "LOC": 3
     },
-    "processing_time_ms": 83.26,
+    "processing_time_ms": 80.05,
     "anonymized_length": 5512,
     "sample_entities": [
       {
@@ -144,7 +144,7 @@
       "PERSON": 6,
       "LOC": 2
     },
-    "processing_time_ms": 123.51,
+    "processing_time_ms": 125.0,
     "anonymized_length": 7297,
     "sample_entities": [
       {
@@ -211,7 +211,7 @@
       "LOC": 44,
       "PERSON": 4
     },
-    "processing_time_ms": 1120.39,
+    "processing_time_ms": 1033.27,
     "anonymized_length": 4097,
     "sample_entities": [
       {
@@ -277,7 +277,7 @@
       "ORG": 44,
       "LOC": 3
     },
-    "processing_time_ms": 88.28,
+    "processing_time_ms": 88.1,
     "anonymized_length": 3137,
     "sample_entities": [
       {
@@ -344,7 +344,7 @@
       "PERSON": 3,
       "LOC": 8
     },
-    "processing_time_ms": 148.45,
+    "processing_time_ms": 147.63,
     "anonymized_length": 6031,
     "sample_entities": [
       {
@@ -410,7 +410,7 @@
       "LOC": 21,
       "ORG": 52
     },
-    "processing_time_ms": 1161.13,
+    "processing_time_ms": 1503.25,
     "anonymized_length": 4276,
     "sample_entities": [
       {
@@ -476,7 +476,7 @@
       "ORG": 48,
       "LOC": 3
     },
-    "processing_time_ms": 73.94,
+    "processing_time_ms": 75.43,
     "anonymized_length": 2966,
     "sample_entities": [
       {
@@ -543,7 +543,7 @@
       "LOC": 9,
       "PERSON": 1
     },
-    "processing_time_ms": 166.69,
+    "processing_time_ms": 167.2,
     "anonymized_length": 8299,
     "sample_entities": [
       {
@@ -610,7 +610,7 @@
       "PERSON": 4,
       "CUSTOM": 5
     },
-    "processing_time_ms": 899.45,
+    "processing_time_ms": 1091.37,
     "anonymized_length": 7248,
     "sample_entities": [
       {
@@ -676,7 +676,7 @@
       "LOC": 4,
       "PERSON": 3
     },
-    "processing_time_ms": 111.52,
+    "processing_time_ms": 109.82,
     "anonymized_length": 5253,
     "sample_entities": [
       {
@@ -741,7 +741,7 @@
       "ORG": 129,
       "LOC": 4
     },
-    "processing_time_ms": 141.34,
+    "processing_time_ms": 139.12,
     "anonymized_length": 7000,
     "sample_entities": [
       {
@@ -809,7 +809,7 @@
       "CUSTOM": 30,
       "PERSON": 1
     },
-    "processing_time_ms": 1432.68,
+    "processing_time_ms": 1632.7,
     "anonymized_length": 6889,
     "sample_entities": [
       {
@@ -877,7 +877,7 @@
       "LOC": 2,
       "CUSTOM": 9
     },
-    "processing_time_ms": 265.22,
+    "processing_time_ms": 253.9,
     "anonymized_length": 4577,
     "sample_entities": [
       {
@@ -945,7 +945,7 @@
       "LOC": 3,
       "PERSON": 1
     },
-    "processing_time_ms": 333.33,
+    "processing_time_ms": 336.6,
     "anonymized_length": 6547,
     "sample_entities": [
       {
@@ -1001,36 +1001,44 @@
     ]
   },
   {
-    "model_name": "Ollama Qwen3 8B",
+    "model_name": "Ollama Qwen3 27B",
     "backend": "ollama",
     "doc_id": "CV ITALIANO - R.E.",
     "doc_length": 7125,
     "entities_found": 0,
     "entity_types": {},
-    "processing_time_ms": 23.93,
+    "processing_time_ms": 74229.31,
     "anonymized_length": 6889,
     "sample_entities": []
   },
   {
-    "model_name": "Ollama Qwen3 8B",
+    "model_name": "Ollama Qwen3 27B",
     "backend": "ollama",
     "doc_id": "CV I.S. - FINANZAS",
     "doc_length": 4978,
     "entities_found": 0,
     "entity_types": {},
-    "processing_time_ms": 6.59,
+    "processing_time_ms": 76813.07,
     "anonymized_length": 4577,
     "sample_entities": []
   },
   {
-    "model_name": "Ollama Qwen3 8B",
+    "model_name": "Ollama Qwen3 27B",
     "backend": "ollama",
     "doc_id": "CV - J.L.  PERFIL ALEMAN",
     "doc_length": 6687,
-    "entities_found": 0,
-    "entity_types": {},
-    "processing_time_ms": 8.94,
+    "entities_found": 1,
+    "entity_types": {
+      "DATE": 1
+    },
+    "processing_time_ms": 58721.5,
     "anonymized_length": 6547,
-    "sample_entities": []
+    "sample_entities": [
+      {
+        "text": "11/2023 – heute",
+        "label": "DATE",
+        "score": 0.95
+      }
+    ]
   }
 ]

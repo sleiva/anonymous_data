@@ -37,7 +37,7 @@ class BenchmarkResult:
 class OllamaNER:
     """Ollama-based NER using LangChain for structured extraction."""
 
-    def __init__(self, model_name: str = "qwen3:8b", base_url: str = "http://localhost:11434"):
+    def __init__(self, model_name: str = "qwen3.8:27b-mlx", base_url: str = "http://localhost:11434"):
         self.model_name = model_name
         self.base_url = base_url
         self._llm = None
@@ -47,50 +47,131 @@ class OllamaNER:
     def _setup(self):
         from langchain_ollama import ChatOllama
         from langchain_core.prompts import ChatPromptTemplate
-        from langchain_core.output_parsers import JsonOutputParser
+        import re
+        import json
 
         self._llm = ChatOllama(
             model=self.model_name,
             base_url=self.base_url,
             temperature=0,
-            format="json",
+            # Don't use format="json" - let the model return raw text and we parse it
+            num_predict=4096,
         )
 
-        prompt = ChatPromptTemplate.from_template("""
-Extract all personally identifiable information (PII) entities from the text.
-Return a JSON array of objects with: text, label, start, end, score.
-Labels: PERSON, ORG, LOC, DATE, EMAIL, PHONE, ADDRESS, ID_NUMBER, CREDIT_CARD, IBAN, IP_ADDRESS, URL, CUSTOM.
+        system_prompt = """You are an expert Named Entity Recognition (NER) system specialized in identifying Personally Identifiable Information (PII) in multilingual documents (Spanish, Italian, German, English).
 
-Text: {text}
+Your task: Extract ALL PII entities from the given text and return them as a JSON array.
 
-Return ONLY the JSON array, no extra text.
-""")
+ENTITY TYPES (use exactly these labels):
+- PERSON: Full person names (first + last), e.g., "Juan Pérez", "María García"
+- ORG: Organizations, companies, institutions, e.g., "Google", "Microsoft España", "SANTANDER DIGITAL ASSETS"
+- LOC: Locations, cities, countries, addresses, e.g., "Madrid", "Barcelona", "Palo Alto", "Italia"
+- DATE: Dates, date ranges, temporal expressions, e.g., "15/03/1985", "Febrero 2022", "Mar 24 – Jul 24", "Ene 2020 – Dic 2020"
+- EMAIL: Email addresses, e.g., "juan@empresa.es", "maria.garcia@google.com"
+- PHONE: Phone numbers, e.g., "+34 91 123 45 67", "+1-555-123-4567"
+- ADDRESS: Full street addresses, e.g., "123 Main Street, New York"
+- ID_NUMBER: National ID numbers (DNI, NIE, SSN), e.g., "12345678Z", "X1234567L"
+- CREDIT_CARD: Credit card numbers
+- IBAN: Bank account numbers (IBAN), e.g., "ES9121000418450200051332"
+- IP_ADDRESS: IP addresses
+- URL: URLs
+- CUSTOM: Any other entity not fitting above categories
 
-        self._chain = prompt | self._llm | JsonOutputParser()
+RULES:
+1. Return ONLY a valid JSON array - no explanations, no markdown, no extra text
+2. Each entity object must have: "text" (exact substring), "label" (from list above), "start" (character index), "end" (character index), "score" (confidence 0.0-1.0)
+3. For multi-word entities, include the COMPLETE phrase as one entity (e.g., "Juan Pérez" not separate "Juan" and "Pérez")
+4. For date ranges, include the full range as one DATE entity
+5. Character indices must match the original text exactly
+6. Score should reflect confidence: 0.9+ for clear entities, 0.7-0.9 for probable, 0.5-0.7 for uncertain
+7. If no entities found, return empty array []
+
+Example output format:
+[
+  {{"text": "Juan Pérez", "label": "PERSON", "start": 0, "end": 10, "score": 0.99}},
+  {{"text": "Madrid", "label": "LOC", "start": 18, "end": 24, "score": 1.0}},
+  {{"text": "juan@empresa.es", "label": "EMAIL", "start": 38, "end": 53, "score": 1.0}}
+]"""
+
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", system_prompt),
+            ("human", "Text: {text}\n\nReturn ONLY the JSON array:")
+        ])
+
+        self._chain = prompt | self._llm
 
     def predict(self, text: str) -> List[Dict]:
         try:
+            # Truncate very long texts to avoid context limits and timeouts
+            max_chars = 1500  # Much smaller for faster processing with 27B model
+            if len(text) > max_chars:
+                text = text[:max_chars] + "... [truncated]"
+
             result = self._chain.invoke({"text": text})
-            if isinstance(result, list):
-                return result
-            return []
+            content = result.content if hasattr(result, 'content') else str(result)
+
+            # Parse JSON from response - handle various formats
+            entities = self._parse_json_response(content)
+
+            # Validate and clean results
+            validated = []
+            for e in entities:
+                if isinstance(e, dict) and "text" in e and "label" in e:
+                    validated.append({
+                        "text": str(e.get("text", "")),
+                        "label": str(e.get("label", "CUSTOM")).upper(),
+                        "start": int(e.get("start", 0)),
+                        "end": int(e.get("end", 0)),
+                        "score": float(e.get("score", 0.5)),
+                    })
+            return validated
         except Exception as e:
             print(f"Ollama error: {e}")
             return []
+
+    def _parse_json_response(self, content: str) -> List[Dict]:
+        """Extract and parse JSON array from model response."""
+        import re
+        import json
+
+        if not content:
+            return []
+
+        content = content.strip()
+
+        # Try to extract from markdown code blocks
+        json_match = re.search(r'```(?:json)?\s*(\[.*?\])\s*```', content, re.DOTALL)
+        if json_match:
+            content = json_match.group(1)
+
+        # Try to find bare JSON array
+        if not (content.startswith('[') and content.endswith(']')):
+            match = re.search(r'(\[.*\])', content, re.DOTALL)
+            if match:
+                content = match.group(1)
+
+        # Parse JSON
+        try:
+            parsed = json.loads(content)
+            if isinstance(parsed, list):
+                return parsed
+        except json.JSONDecodeError:
+            pass
+
+        return []
 
     def process_document(self, doc: Document) -> Document:
         entities_data = self.predict(doc.text)
         entities = []
         for e in entities_data:
-            if isinstance(e, dict) and "text" in e:
-                entities.append(type('Entity', (), {
-                    'text': e.get('text', ''),
-                    'label': type('Label', (), {'value': e.get('label', 'CUSTOM')})(),
-                    'start': e.get('start', 0),
-                    'end': e.get('end', 0),
-                    'score': e.get('score', 0.5),
-                    'model_backend': ModelBackend.HF_TRANSFORMERS,
-                })())
+            entities.append(type('Entity', (), {
+                'text': e.get('text', ''),
+                'label': type('Label', (), {'value': e.get('label', 'CUSTOM')})(),
+                'start': e.get('start', 0),
+                'end': e.get('end', 0),
+                'score': e.get('score', 0.5),
+                'model_backend': ModelBackend.HF_TRANSFORMERS,
+            })())
         doc.entities = entities
         return doc
 
@@ -280,7 +361,7 @@ def main():
         {"name": "BERTin NER", "backend": "hf_transformers", "model": "dccuchile/bertin-roberta-base-spanish-finetuned-ner", "threshold": 0.5},
         {"name": "BERT English (baseline)", "backend": "hf_transformers", "model": "dslim/bert-base-NER", "threshold": 0.7},
         {"name": "SpaCy Transformer", "backend": "spacy", "model": "en_core_web_trf", "threshold": 0.5},
-        {"name": "Ollama Qwen3 8B", "backend": "ollama", "model": "qwen3:8b"},
+        {"name": "Ollama Qwen3 27B", "backend": "ollama", "model": "qwen3.8:27b-mlx"},
     ]
 
     results = run_benchmark(docs, models_config, "output/benchmark_results.json")

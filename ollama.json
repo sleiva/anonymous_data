@@ -17,6 +17,74 @@
       },
       "notes": "Requires temperature=0.6. At 0.1 returns empty. Excellent entity typing (PERSON, ORG, GPE, EMAIL, PHONE, ID)."
     },
+    "ornith-1.5:9b": {
+      "description": "Newer version of ornith (6.6 GB, 9B params). Improved reasoning and multilingual support.",
+      "size_gb": 6.6,
+      "parameters": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "top_k": 20,
+        "num_predict": 2048
+      },
+      "best_for": ["multilingual NER", "improved reasoning", "larger context"],
+      "performance": {
+        "entities_detected": "Good (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
+        "speed": "Medium (~15-30s per 5000 chars)",
+        "format": "Correct JSON array with text, label, start, end, score"
+      },
+      "notes": "Newer 9B version of ornith. Try temperature=0.6 for best NER results."
+    },
+    "gemma4:e2b-mlx": {
+      "description": "Google Gemma 4 efficient 2B model (6.5 GB). Fast and efficient for NER tasks.",
+      "size_gb": 6.5,
+      "parameters": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "top_k": 20,
+        "num_predict": 2048
+      },
+      "best_for": ["fast NER", "efficient inference", "multilingual"],
+      "performance": {
+        "entities_detected": "Good (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
+        "speed": "Fast (~5-15s per 5000 chars)",
+        "format": "Correct JSON array with text, label, start, end, score"
+      },
+      "notes": "Efficient 2B model. Try temperature=0.6 for NER. Good balance of speed/accuracy."
+    },
+    "ministral-3:3b": {
+      "description": "Ministral 3B model (3.0 GB). Very fast and lightweight.",
+      "size_gb": 3.0,
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": 20,
+        "num_predict": 2048
+      },
+      "best_for": ["very fast NER", "lightweight", "edge deployment"],
+      "performance": {
+        "entities_detected": "Moderate (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
+        "speed": "Very fast (~3-8s per 5000 chars)",
+        "format": "Correct JSON array with text, label, start, end, score"
+      },
+      "notes": "Very small 3B model. Trade-off: speed over accuracy. Good for real-time NER."
+    },
+    "granite4.2:3b": {
+      "description": "IBM Granite 4.2 3B model (2.2 GB). Enterprise-focused, good for structured extraction.",
+      "size_gb": 2.2,
+      "parameters": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "top_k": 20,
+        "num_predict": 2048
+      },
+      "best_for": ["enterprise NER", "structured extraction", "compliance"],
+      "performance": {
+        "entities_detected": "Good (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
+        "speed": "Fast (~5-10s per 5000 chars)",
+        "format": "Correct JSON array with text, label, start, end, score"
+      },
+      "notes": "IBM enterprise model. Good for compliance/financial NER. Try temperature=0.6."
+    },
     "lfm2.5:8b": {
       "description": "Liquid Foundation Model 8B (5.2 GB). Returns structured summary format instead of NER array.",
       "size_gb": 5.2,
@@ -34,35 +102,6 @@
         "entities_detected": "Returns structured biography/experience objects"
       },
       "notes": "Returns structured biography format, not NER array. Good for document understanding, not PII extraction."
-    },
-    "qwen3.8:27b-mlx": {
-      "description": "Large 27B model (18 GB). Base model without NER fine-tuning - fails on long texts.",
-      "size_gb": 18,
-      "parameters": {
-        "temperature": 1.0,
-        "top_p": 0.95,
-        "top_k": 20,
-        "repeat_penalty": 1.0,
-        "min_p": 0.0,
-        "num_predict": 4096
-      },
-      "best_for": ["Short prompt testing only"],
-      "performance": {
-        "entities_detected": "0 on long CVs (4978+ chars), 1 on short German text",
-        "speed": "Very slow (93s/doc on MPS)",
-        "format": "Correct when it works"
-      },
-      "notes": "Base model without NER fine-tuning. Fails on long texts due to truncation and lack of NER training. Not recommended for production NER."
-    },
-    "bge-m3:latest": {
-      "description": "Embedding model (1.2 GB). Not for NER.",
-      "size_gb": 1.2,
-      "purpose": "Embeddings only"
-    },
-    "nomic-embed-text:latest": {
-      "description": "Embedding model (274 MB). Not for NER.",
-      "size_gb": 0.27,
-      "purpose": "Embeddings only"
     }
   },
   "recommended_ner_params": {
@@ -70,13 +109,37 @@
       "temperature": 0.6,
       "top_p": 0.95,
       "top_k": 20,
-      "num_predict": 4096
+      "num_predict": 2048
+    },
+    "ornith-1.5:9b": {
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "num_predict": 2048
+    },
+    "gemma4:e2b-mlx": {
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "num_predict": 2048
+    },
+    "ministral-3:3b": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 20,
+      "num_predict": 2048
+    },
+    "granite4.2:3b": {
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "num_predict": 2048
     },
     "llama3.1:8b": {
       "temperature": 0.6,
       "top_p": 0.95,
       "top_k": 20,
-      "num_predict": 4096
+      "num_predict": 2048
     },
     "phi3:mini": {
       "temperature": 0.7,

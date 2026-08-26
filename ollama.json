@@ -9,6 +9,12 @@
         "top_k": 20,
         "num_predict": 2048
       },
+      "manifest_params": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "top_k": 20,
+        "stop": "<|eot_id|>"
+      },
       "best_for": ["multilingual NER", "Spanish/English/Italian/German", "PII detection"],
       "performance": {
         "entities_detected": "Good (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
@@ -25,6 +31,9 @@
         "top_p": 0.95,
         "top_k": 20,
         "num_predict": 2048
+      },
+      "manifest_params": {
+        "note": "No explicit parameters in manifest, using defaults"
       },
       "best_for": ["multilingual NER", "improved reasoning", "larger context"],
       "performance": {
@@ -43,6 +52,12 @@
         "top_k": 20,
         "num_predict": 2048
       },
+      "manifest_params": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 64,
+        "note": "Manifest has temperature=1, top_k=64. For NER, override to 0.6 and top_k=20"
+      },
       "best_for": ["fast NER", "efficient inference", "multilingual"],
       "performance": {
         "entities_detected": "Good (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
@@ -60,6 +75,9 @@
         "top_k": 20,
         "num_predict": 2048
       },
+      "manifest_params": {
+        "note": "No explicit parameters in manifest, uses Mistral template with system prompt"
+      },
       "best_for": ["very fast NER", "lightweight", "edge deployment"],
       "performance": {
         "entities_detected": "Moderate (PERSON, ORG, LOC, EMAIL, PHONE, DATE, ID)",
@@ -76,6 +94,12 @@
         "top_p": 0.95,
         "top_k": 20,
         "num_predict": 2048
+      },
+      "manifest_params": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "num_ctx": 131072,
+        "note": "Manifest has temperature=1, num_ctx=131072. For NER, override temperature to 0.6"
       },
       "best_for": ["enterprise NER", "structured extraction", "compliance"],
       "performance": {
@@ -95,6 +119,9 @@
         "repeat_penalty": 1.0,
         "min_p": 0.0,
         "num_predict": 4096
+      },
+      "manifest_params": {
+        "note": "Check manifest for parameters"
       },
       "best_for": ["Document summarization", "Structured extraction"],
       "performance": {
